@@ -16,6 +16,6 @@ for file in Data/*-partner-protein.fasta
 done
 
 # visualisation
-Rscript nitroplast.R
+Rscript symbiont-loss.R
 
 
