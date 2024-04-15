@@ -31,6 +31,10 @@ df$Partner = gsub("Plastid1", "Plastid (Cc)", df$Partner)
 df$Partner = gsub("Plastid2", "Plastid (Hv)", df$Partner)
 
 # assign type of organism based on label
+df$Type = "Symbiont"
+df$Type[grep("partner", df$Partner)] = "Partner"
+
+# give each relationship a label
 df$System = df$Partner
 df$System = gsub("-symbiont", "", df$System)
 df$System = gsub("-partner", "", df$System)
@@ -73,7 +77,7 @@ pKa2.new[[class]] = ggplot(df, aes(x=System,y=pKa2, fill=Type)) +
 
 # output to file
 sf = 2.5
-png("nitroplast.png", width=600*sf, height=600*sf, res=72*sf)
+png("symbiont-loss.png", width=600*sf, height=600*sf, res=72*sf)
 ggarrange( ggarrange(plotlist=hydro.new, nrow=1, labels=c("A", "B")), 
            ggarrange(plotlist=pKa2.new, nrow=1, labels=c("C", "D")), nrow=2)
 dev.off()
