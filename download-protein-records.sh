@@ -23,8 +23,8 @@ wget https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore\&id=CP
 wget https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore\&id=ACYB01000001.1\&rettype=fasta_cds_aa -O Data/Azolla-partner-protein.fasta
 
 # reference mitochondrial and plastid records
-wget https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore\&id=NC_001823.1\&rettype=fasta_cds_aa -O Data/Mito1-symbiont-protein.fasta
-wget https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore\&id=NC_037526.1\&rettype=fasta_cds_aa -O Data/Mito2-symbiont-protein.fasta
+wget https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore\&id=NC_037526.1\&rettype=fasta_cds_aa -O Data/Mito1-symbiont-protein.fasta
+wget https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore\&id=NC_001823.1\&rettype=fasta_cds_aa -O Data/Mito2-symbiont-protein.fasta
 wget https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore\&id=CP003398.1\&rettype=fasta_cds_aa -O Data/Mito1-partner-protein.fasta
 cp Data/Mito1-partner-protein.fasta Data/Mito2-partner-protein.fasta
 wget https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore\&id=NC_020795.1\&rettype=fasta_cds_aa -O Data/Plastid1-symbiont-protein.fasta
