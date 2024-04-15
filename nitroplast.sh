@@ -1,5 +1,6 @@
-# extract data
-tar -xvf data.tar.gz
+# download and extract data
+chmod +x download-protein-records.sh
+./download-protein-records.sh
 
 # initialise output file
 python3 get-feature-labels.py Prelims/stats-residue.csv Prelims/stats-codon.csv  Partner,GeneLabel, > symbiont-all-stats.csv
@@ -13,5 +14,8 @@ for file in Data/*-partner-protein.fasta
   do
     python3 get-stats-protein-only.py $file symbiont-all-stats.csv Prelims/stats-codon.csv Prelims/stats-residue.csv $file
 done
+
+# visualisation
+Rscript nitroplast.R
 
 
