@@ -77,3 +77,7 @@ png("symbiont-loss.png", width=600*sf, height=600*sf, res=72*sf)
 ggarrange( ggarrange(plotlist=hydro.new, nrow=1, labels=c("A", "B")), 
            ggarrange(plotlist=pKa2.new, nrow=1, labels=c("C", "D")), nrow=2)
 dev.off()
+
+# correlation between our features
+cor(df$Hydro, df$pKa2, use="complete.obs")**2
+
