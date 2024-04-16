@@ -4,10 +4,6 @@ args = c("symbiont-all-stats.csv")
 
 message("Loading libraries...")
 library(ggplot2)
-library(tree)
-library(gridExtra)
-library(ggnewscale)
-library(ggpval)
 library(ggpubr)
 
 stats.file = args[1]
