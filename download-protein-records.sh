@@ -32,6 +32,8 @@ wget https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore\&id=NC
 cp Data/Chromatophore-partner-protein.fasta Data/Plastid1-partner-protein.fasta
 cp Data/Chromatophore-partner-protein.fasta Data/Plastid2-partner-protein.fasta
 
+cp Data/Fokinia-partner-protein.fasta Data/Wolbachia-partner-protein.fasta
+
 # new elements
 wget https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore\&id=CP001842.1\&rettype=fasta_cds_aa -O Data/Nitroplast-symbiont-protein.fasta
 wget https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore\&id=AP012549\&rettype=fasta_cds_aa -O Data/Epithemia-symbiont-protein.fasta
