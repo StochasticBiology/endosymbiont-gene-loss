@@ -138,3 +138,31 @@ ggarrange( ggarrange(plotlist=hydro.new, nrow=1, widths=c(1,1.5), labels=c("A", 
            nrow=3, heights = c(1,1,2))
 dev.off()
 
+table(df$Type)
+
+### cover image
+
+# black background
+bbg = theme(
+  plot.background = element_rect(fill = "black", color = NA),  # Black background
+  panel.background = element_rect(fill = "black", color = NA),  # Black panel background
+  panel.grid.major = element_blank(),  # Remove major grid lines
+  panel.grid.minor = element_blank(),  # Remove minor grid lines
+) 
+  
+# mean of symbiont statistivs
+mean.symb =data.frame(Hydro=mean(df$Hydro[df$Type=="Symbiont"], na.rm=TRUE),
+                           pKa2=mean(df$pKa2[df$Type=="Symbiont"], na.rm=TRUE))
+
+# plot partner statistics in background and point reflecting symbiont mean
+ggplot(data=df[df$Type=="Partner",], aes(x = Hydro, y = pKa2)) + 
+  # stat_density_2d_filled() +
+  geom_hex(aes(fill=..density..)) +
+  geom_point(size=0.2, color="white", alpha=0.1) +
+  geom_point(data=mean.symb, size=15, color="white", alpha = 0.25) +
+  geom_point(data=mean.symb, size=13, color="black", alpha = 0.25) +
+  geom_point(data=mean.symb, size=3, color="white", alpha = 0.25) +
+  scale_fill_viridis() +
+  xlim(20,30) + ylim(9.3, 9.5) +
+  theme_void() + bbg + theme(legend.position="none")
+
