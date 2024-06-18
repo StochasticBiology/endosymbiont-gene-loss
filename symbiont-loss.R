@@ -166,7 +166,29 @@ g.cover = ggplot(data=df[df$Type=="Partner",], aes(x = Hydro, y = pKa2)) +
   xlim(20,30) + ylim(9.3, 9.5) +
   theme_void() + bbg + theme(legend.position="none")
 
-sf = 2
+g.cover.2 = ggarrange(ggplot(data=df[df$Type=="Partner",], aes(x = Hydro, y = pKa2)) + 
+  # stat_density_2d_filled() +
+  geom_hex(aes(fill=..density..)) +
+  geom_point(size=0.2, color="white", alpha=0.2) +
+   scale_fill_viridis() +
+  xlim(20,30) + ylim(9.3, 9.5) +
+  theme_void() + bbg + theme(legend.position="none"),
+  ggplot(data=df[df$Type=="Symbiont",], aes(x = Hydro, y = pKa2)) + 
+    # stat_density_2d_filled() +
+    geom_hex(aes(fill=..density..)) +
+    geom_point(size=0.2, color="white", alpha=0.2) +
+    scale_fill_viridis() +
+    xlim(20,30) + ylim(9.3, 9.5) +
+    theme_void() + bbg + theme(legend.position="none")
+)
+  
+
+sf = 4
 png("cover-image.png", width=800*sf, height=600*sf, res=72*sf)
 print(g.cover)
+dev.off()
+
+sf = 4
+png("cover-image=2.png", width=800*sf, height=600*sf, res=72*sf)
+print(g.cover.2)
 dev.off()
