@@ -7,13 +7,15 @@ library(ggplot2)
 library(ggpubr)
 library(stringr)
 library(ggrepel)
+library(viridis)
 
 stats.file = args[1]
 out.path = args[2]
 
 # read gene stats and normalise
-df = read.csv(stats.file, header=T)
+df = read.csv(stats.file, header=TRUE, stringsAsFactors = FALSE)
 df$Length = as.numeric(df$Length)
+
 df$Hydro = df$Hydro/df$Length
 df$Hydro_i = df$Hydro_i/df$Length
 df$pKa1 = df$pKa1/df$Length
