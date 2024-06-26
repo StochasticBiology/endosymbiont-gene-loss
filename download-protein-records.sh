@@ -43,6 +43,10 @@ wget https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore\&id=AP
 # GCF_000021805.1 Epithemia partner
 # GCA_000350105.1 Richelia symbiont
 # GCF_019056575.1 Richelia partner
+# GCF_003099975.1 Buchnera symbiont
+# GCF_019048385.1 Buchnera and Wigglesworthia partner
+# GCF_000247565.1 Wigglesworthia symbiont
+# GCF_014107475.1 Wolbachia symbiont
 # so unpack these from previously-downloaded
 tar -xvf assembly-records.tar.gz
 cp Assembly-records/* Data/
